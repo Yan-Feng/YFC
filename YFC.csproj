@@ -28,13 +28,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="ClientApp\.angular-cli.json" />
-    <Content Include="ClientApp\appsettings.Development.json" />
-    <Content Include="ClientApp\appsettings.json" />
-    <Content Include="ClientApp\package-lock.json" />
-    <Content Include="ClientApp\package.json" />
-    <Content Include="ClientApp\tsconfig.json" />
-    <Content Include="ClientApp\tslint.json" />
+    <None Include=".angular-cli.json" />
+    <None Include="appsettings.Development.json" />
+    <None Include="appsettings.json" />
+    <None Include="package-lock.json" />
+    <None Include="package.json" />
+    <None Include="Program.cs" />
+    <None Include="Startup.cs" />
+    <None Include="tsconfig.json" />
+    <None Include="tslint.json" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
