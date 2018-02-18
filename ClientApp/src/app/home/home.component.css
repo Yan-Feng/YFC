@@ -1,0 +1,39 @@
+table {
+  font-size: 12px;
+}
+
+th.right, td.right {
+  text-align: right;
+}
+
+th, td {
+  vertical-align: central;
+}
+
+.freeze-header-backgroup {
+background-color:#fbfbfb;
+}
+
+table tr td, table tr th {
+  opacity: 1 !important;
+}
+
+thead tr {
+  height: 60px;
+}
+
+tbody tr {
+  height: 70px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.whitle {
+  color: black;
+}

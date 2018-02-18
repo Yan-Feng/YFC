@@ -3,9 +3,9 @@ C:\Personal\YFC\bin\Release\netcoreapp2.0\YFC.runtimeconfig.json
 C:\Personal\YFC\bin\Release\netcoreapp2.0\YFC.runtimeconfig.dev.json
 C:\Personal\YFC\bin\Release\netcoreapp2.0\YFC.dll
 C:\Personal\YFC\bin\Release\netcoreapp2.0\YFC.pdb
-C:\Personal\YFC\obj\Release\netcoreapp2.0\YFC.csprojResolveAssemblyReference.cache
 C:\Personal\YFC\obj\Release\netcoreapp2.0\YFC.csproj.CoreCompileInputs.cache
 C:\Personal\YFC\obj\Release\netcoreapp2.0\YFC.AssemblyInfoInputs.cache
 C:\Personal\YFC\obj\Release\netcoreapp2.0\YFC.AssemblyInfo.cs
 C:\Personal\YFC\obj\Release\netcoreapp2.0\YFC.dll
 C:\Personal\YFC\obj\Release\netcoreapp2.0\YFC.pdb
+C:\Personal\YFC\obj\Release\netcoreapp2.0\YFC.csprojResolveAssemblyReference.cache

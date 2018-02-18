@@ -28,6 +28,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\home\coin.model.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include=".angular-cli.json" />
     <None Include="appsettings.Development.json" />
     <None Include="appsettings.json" />
@@ -37,6 +41,10 @@
     <None Include="Startup.cs" />
     <None Include="tsconfig.json" />
     <None Include="tslint.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\home\coin.model.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

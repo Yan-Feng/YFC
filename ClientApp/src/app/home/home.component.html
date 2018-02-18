@@ -1,37 +1,52 @@
-<table class='table'>
-  <thead>
-    <tr>
-      <th>Rank</th>
-      <th>ID</th>
-      <th>Symbol</th>
-      <th>Name</th>
-      <th>Price USD</th>
-      <th>Price BTC</th>
-      <th>Market Cap USD</th>
-      <th>Available Supply</th>
-      <th>Total Supply</th>
-      <th>% 1H</th>
-      <th>% 24H</th>
-      <th>% 7D</th>
-      <th>Last Updated</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let co of coinsObservable | async">
-      <td>{{co.rank}}</td>
-      <td>{{co.id}}</td>
-      <td>{{co.symbol}}</td>
-      <td>{{co.name}}</td>
-      <td>{{co.price_usd}}</td>
-      <td>{{co.price_btc}}</td>
-      <td>{{co.mark_cap_usd}}</td>
-      <td>{{co.available_supply}}</td>
-      <td>{{co.total_supply}}</td>
-      <td>{{co.percent_change_1h}}</td>
-      <td>{{co.percent_change_24h}}</td>
-      <td>{{co.percent_change_7d}}</td>
-      <td>{{co.last_updated}}</td>
-    </tr>
+<div class="row">
+  <div style="width:110px;float:left;" class="freeze-header-backgroup">
+    <table class='table'>
+      <thead>
+        <tr>
+          <th style="width:17px;">#</th>
+          <th style="width:60px;">Symbol</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let co of coins">
+          <td>{{co.rank}}</td>
+          <td style="text-overflow: ellipsis;">
+            {{co.symbol}}
+            <div style="font-size:10px;">{{co.name}}</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="margin-left:110px; overflow-x:auto;">
+    <table class='table'>
+      <thead>
+        <tr class="freeze-header-backgroup">
+          <th class="right">Price</th>
+          <th class="right" style="width:150px;">Change %</th>
+          <th class="right">Market Cap USD</th>
+          <th class="right">Available Supply</th>
+          <th>Total Supply</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let co of coins">
+          <td class="right" style="width:100px;">
+            <div>{{priceUSD[co.rank -1] | currency}}</div>
+            <div>{{priceBTC[co.rank -1]}}</div>
+          </td>
+          <td class="right" style="width:150px;" [ngClass]="{'red': changes1H[co.rank -1]>preChanges1H[co.rank -1], 'green': changes1H[co.rank -1]<preChanges1H[co.rank -1], 'whitle': changes1H[co.rank -1]==preChanges1H[co.rank -1]}">
+            <div style="white-space: nowrap;">{{changes1H[co.rank -1]}}% <span style="font-size:9px;">1H</span></div>
+            <div style="white-space: nowrap;">{{changes24H[co.rank -1]}}% <span style="font-size:9px;">1D</span></div>
+            <div style="white-space: nowrap;">{{changes7D[co.rank -1]}}% <span style="font-size:9px;">7D</span></div>
+          </td>
+          <td class="right" style="width:150px;">{{marketCapUSD[co.rank -1] | currency}}</td>
+          <td class="right" style="width:150px;">{{availableSupply[co.rank -1] | currency}}</td>
+          <td style="min-width:150px;">{{totalSupply[co.rank -1] | currency}}</td>
+        </tr>
+      </tbody>
+    </table>
 
-  </tbody>
-</table>
+  </div>
+
+</div>
