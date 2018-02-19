@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { TimerObservable } from "rxjs/observable/TimerObservable";
@@ -23,15 +23,17 @@ export class HomeComponent implements OnInit {
   public availableSupply: number[] = [];
   public totalSupply: number[] = [];
 
+
+  private _apiUrl:string = "https://api.coinmarketcap.com/v1/ticker/";
+
   public detailsObservable: Observable<CoinDetail[]>;
 
   constructor(private _http: HttpClient) {
-
   }
 
   ngOnInit() {
 
-    this._http.get<Coin[]>("https://api.coinmarketcap.com/v1/ticker/").subscribe(result => {
+    this._http.get<Coin[]>(this._apiUrl).subscribe(result => {
       if (result) {
         result.sort((e1, e2) => e1.rank - e2.rank);
         this.coins = result;
@@ -41,7 +43,7 @@ export class HomeComponent implements OnInit {
 
     TimerObservable.create(0, 30000)
       .subscribe(() => {
-        this._http.get<CoinDetail[]>("https://api.coinmarketcap.com/v1/ticker/").subscribe(result => {
+        this._http.get<CoinDetail[]>(this._apiUrl).subscribe(result => {
           if (result) {
             this.preChanges1H = this.changes1H;
             this.priceUSD = [];
@@ -64,10 +66,8 @@ export class HomeComponent implements OnInit {
               this.totalSupply.push(p.total_supply);
             }
           }
-
         });
       });
-
   }
 
 

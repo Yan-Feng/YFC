@@ -1,0 +1,29 @@
+.binance-qr-window {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 9px;
+  border: solid 1px #f1e9e9;
+  background-color: rgba(3, 0, 252, 0.81);
+}
+
+  .binance-qr-window .header a {
+    line-height: 30px;
+    padding: 5px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+
+  .binance-qr-window .body {
+    background-color: white;
+    padding: 3px;
+  }
+
+@media only screen and (min-width: 768px) {
+  .binance-qr-window {
+    font-size: 12px;
+    line-height: 40px;
+    padding: 7px;
+  }
+}

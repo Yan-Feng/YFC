@@ -28,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\binance\binance-qr.component.ts" />
     <None Remove="ClientApp\src\app\home\coin.model.ts" />
   </ItemGroup>
 
@@ -44,6 +45,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\binance\binance-qr.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\home\coin.model.ts" />
   </ItemGroup>
 

@@ -10,9 +10,9 @@
       <tbody>
         <tr *ngFor="let co of coins">
           <td>{{co.rank}}</td>
-          <td style="text-overflow: ellipsis;">
+          <td>
             {{co.symbol}}
-            <div style="font-size:10px;">{{co.name}}</div>
+            <div class="sub-text">{{co.name}}</div>
           </td>
         </tr>
       </tbody>
@@ -35,10 +35,10 @@
             <div>{{priceUSD[co.rank -1] | currency}}</div>
             <div>{{priceBTC[co.rank -1]}}</div>
           </td>
-          <td class="right" style="width:150px;" [ngClass]="{'red': changes1H[co.rank -1]>preChanges1H[co.rank -1], 'green': changes1H[co.rank -1]<preChanges1H[co.rank -1], 'whitle': changes1H[co.rank -1]==preChanges1H[co.rank -1]}">
-            <div style="white-space: nowrap;">{{changes1H[co.rank -1]}}% <span style="font-size:9px;">1H</span></div>
-            <div style="white-space: nowrap;">{{changes24H[co.rank -1]}}% <span style="font-size:9px;">1D</span></div>
-            <div style="white-space: nowrap;">{{changes7D[co.rank -1]}}% <span style="font-size:9px;">7D</span></div>
+          <td class="right" style="width:150px;" [ngClass]="{'red': changes1H[co.rank -1]>preChanges1H[co.rank -1], 'green': changes1H[co.rank -1]<preChanges1H[co.rank -1]}">
+            <div style="white-space: nowrap;">{{changes1H[co.rank -1]}}% <span class="sub-text">1H</span></div>
+            <div style="white-space: nowrap;">{{changes24H[co.rank -1]}}% <span class="sub-text">1D</span></div>
+            <div style="white-space: nowrap;">{{changes7D[co.rank -1]}}% <span class="sub-text">7D</span></div>
           </td>
           <td class="right" style="width:150px;">{{marketCapUSD[co.rank -1] | currency}}</td>
           <td class="right" style="width:150px;">{{availableSupply[co.rank -1] | currency}}</td>
@@ -46,7 +46,9 @@
         </tr>
       </tbody>
     </table>
-
   </div>
-
 </div>
+
+<binance-qr></binance-qr>
+
+
