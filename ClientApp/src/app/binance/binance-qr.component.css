@@ -13,6 +13,7 @@
     font-weight: bold;
     color: white;
     text-decoration: none;
+    width:100%;
   }
 
   .binance-qr-window .body {
